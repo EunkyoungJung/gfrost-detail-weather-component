@@ -1,5 +1,5 @@
-import { getSubTitle } from "./subTitle";
-import { getBarChart } from "./barChart";
+import { getSubTitle } from "./subTitle.js";
+import { getBarChart } from "./barChart.js";
 
 const weatherColor = {
   temperature: "#ec5858",
@@ -8,7 +8,7 @@ const weatherColor = {
   averageWind: "#9088d4",
   maxWind: "#9088d4",
   ins: "#ffda77",
-  sunshineDuration: "#ffda77"
+  sunshineDuration: "#ffda77",
 };
 
 export const getWeatherLayout = (

@@ -1,4 +1,4 @@
-import { getCustomedDate, getKoreanDayName } from "../utils/dateUtils";
+import { getCustomedDate, getKoreanDayName } from "../utils/dateUtils.js";
 
 export const getWeeklyWeatherForecast = (data) => {
   let weeklyWeatherForecast = ``;
@@ -15,9 +15,8 @@ export const getWeeklyWeatherForecast = (data) => {
     }
 
     weeklyWeatherForecast += `
-      <div style="margin-top: 15px; margin-bottom: 15px; text-align: center; width: ${
-        99 / 10
-      }%; font-size: 12px; font-weight: bold; display: flex; flex-direction: column; justify-content:center; algin-items: center; ${
+      <div style="margin-top: 15px; margin-bottom: 15px; text-align: center; width: ${99 /
+        10}%; font-size: 12px; font-weight: bold; display: flex; flex-direction: column; justify-content:center; algin-items: center; ${
       index ? `border-left: 1px solid #cccccc;` : ``
     }">
         <div>${dayName}</div>

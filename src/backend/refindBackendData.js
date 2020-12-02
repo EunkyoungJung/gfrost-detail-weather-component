@@ -1,4 +1,4 @@
-import { growthStage } from "../data/data.json";
+import { growthStage } from "../data/data.js";
 
 const getParsedDateString = (dateString) => {
   return `${dateString.slice(0, 4)}/${dateString.slice(
@@ -74,7 +74,7 @@ const getTemperatureTimeline = (hourlyWeathers) => {
   hourlyWeathers.map((weather, index) => {
     let hourlyTemp = {
       date: getParsedDateString(weather.logged_at),
-      value: weather.htemp
+      value: weather.htemp,
     };
     temperatureTimeline.push(hourlyTemp);
   });
@@ -86,7 +86,7 @@ const getOneTypeWeathers = (dailyWeathers, weatherTitle) => {
   dailyWeathers.map((weather, index) => {
     let oneTypeWeather = {
       date: getParsedDateString(weather.logged_at),
-      value: weather[`estimation:${weatherTitle}`]
+      value: weather[`estimation:${weatherTitle}`],
     };
     oneTypeWeathers.push(oneTypeWeather);
   });
@@ -99,7 +99,7 @@ const getMinMaxTemperatures = (dailyWeathers) => {
     let minMaxTemperature = {
       date: getParsedDateString(weather.logged_at),
       tmin: weather[`estimation:tmin`],
-      tmax: weather[`estimation:tmax`]
+      tmax: weather[`estimation:tmax`],
     };
     minMaxTemperatures.push(minMaxTemperature);
   });

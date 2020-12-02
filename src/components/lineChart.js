@@ -1,4 +1,4 @@
-import { getCustomedTime, getCustomedDate } from "../utils/dateUtils";
+import { getCustomedTime, getCustomedDate } from "../utils/dateUtils.js";
 
 export const getMinMaxScale = (data) => {
   let minValue = -10;
@@ -103,9 +103,8 @@ export const getLineChartBackground = (
     </div>
     `;
     return `
-    <div style="height:${height + scaleHeight + 10}px; width:${
-      width + 30
-    }px; text-align: right; display: flex; flex-direction: column; text-align: right;">
+    <div style="height:${height + scaleHeight + 10}px; width:${width +
+      30}px; text-align: right; display: flex; flex-direction: column; text-align: right;">
       ${yLegendScale}
     </div>
     `;

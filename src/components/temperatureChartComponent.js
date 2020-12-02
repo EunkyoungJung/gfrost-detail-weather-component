@@ -1,4 +1,4 @@
-import { getSubTitle } from "./subTitle";
+import { getSubTitle } from "./subTitle.js";
 
 export const getTemperatureChartComponent = (tagCanvasId) => {
   return `

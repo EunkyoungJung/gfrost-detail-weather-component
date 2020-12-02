@@ -1,16 +1,17 @@
-import "./styles.css";
-
-import * as API from "./backendAPI";
-import { getSubTitle } from "./components/subTitle";
-import { getWeatherLayout } from "./components/weatherLayout";
-import { getTemperatureChartComponent } from "./components/temperatureChartComponent";
-import { getLineChart, getLineChartBackground } from "./components/lineChart";
-import { getRecentWeatherSummary } from "./components/recentWeatherSummary";
-import { getWeeklyWeatherForecast } from "./components/weeklyWeatherForecast";
-import { getSelectPointOptions } from "./components/selectPoints";
-import { movingBlueBalls } from "./images/movingBlueBalls";
-import { farmList } from "./backend/apiList";
-import { getRefinedData } from "./backend/refindBackendData";
+import * as API from "./backendAPI.js";
+import { getSubTitle } from "./components/subTitle.js";
+import { getWeatherLayout } from "./components/weatherLayout.js";
+import { getTemperatureChartComponent } from "./components/temperatureChartComponent.js";
+import {
+  getLineChart,
+  getLineChartBackground,
+} from "./components/lineChart.js";
+import { getRecentWeatherSummary } from "./components/recentWeatherSummary.js";
+import { getWeeklyWeatherForecast } from "./components/weeklyWeatherForecast.js";
+import { getSelectPointOptions } from "./components/selectPoints.js";
+import { movingBlueBalls } from "./images/movingBlueBalls.js";
+import { farmList } from "./backend/apiList.js";
+import { getRefinedData } from "./backend/refindBackendData.js";
 
 let spotList = null;
 
@@ -126,7 +127,6 @@ const renderComponent = (data) => {
 
 const updateComponent = (selectedPointInfo) => {
   const farmId = selectedPointInfo.farm_id;
-  console.log("ahahah farmId: ", farmId);
   const farmWeatherAPI = `https://ggfrost.epinet.kr/farm/value/${farmId}/`;
   fetch(farmWeatherAPI)
     .then((response) => {

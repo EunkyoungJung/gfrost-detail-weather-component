@@ -1,4 +1,4 @@
-import { getCustomedDate } from "../utils/dateUtils";
+import { getCustomedDate } from "../utils/dateUtils.js";
 
 const getSingleWeatherItem = (weatherTitle, weatherValue, valueUnit = "") => {
   const frostRateColor = { 낮음: "YellowGreen", 높음: "Tomato" };
@@ -35,9 +35,8 @@ export const getRecentWeatherSummary = (dailyWeathers) => {
   dailyWeathers.map(
     (dailyWeather, index) =>
       (dailyWeatherSummary += `
-      <div style="height: 100%; width:${
-        (100 - 3) / weatherCount
-      }%; box-sizing: border-box; padding: 5px 10px; font-weight: bold; display: flex; flex-direction: column; justify-contents: space-around; border: 1px solid #cccccc; box-shadow: 0 2px 0 #dddddd; border-radius: 5px; text-align:center;">
+      <div style="height: 100%; width:${(100 - 3) /
+        weatherCount}%; box-sizing: border-box; padding: 5px 10px; font-weight: bold; display: flex; flex-direction: column; justify-contents: space-around; border: 1px solid #cccccc; box-shadow: 0 2px 0 #dddddd; border-radius: 5px; text-align:center;">
         <div style="font-size: 15px; border-bottom: 1px solid #cccccc; padding-top: 10px; padding-bottom: 10px;">${getCustomedDate(
           dailyWeather.date
         )}</div>

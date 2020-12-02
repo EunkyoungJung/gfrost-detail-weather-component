@@ -1,4 +1,4 @@
-import { getCustomedDate } from "../utils/dateUtils";
+import { getCustomedDate } from "../utils/dateUtils.js";
 
 export const getBarChart = (data, barColor = "Tomato") => {
   let scales = [0];
@@ -20,30 +20,23 @@ export const getBarChart = (data, barColor = "Tomato") => {
   let bars = ``;
   data.map((item, index) => {
     bars += `
-    <div style="width: ${
-      50 / data.length
-    }%; text-align:center; display: flex; flex-direction: column; align-items: center;">
-      <div style="height: ${
-        100 -
+    <div style="width: ${50 /
+      data.length}%; text-align:center; display: flex; flex-direction: column; align-items: center;">
+      <div style="height: ${100 -
         (90 *
           (item.value === null || item.value === undefined ? 0 : item.value)) /
-          chartMaxScale
-      }%; text-align: center; box-sizing: border-box; padding-top:${
-      (100 -
-        (90 *
-          (item.value === null || item.value === undefined ? 0 : item.value)) /
-          chartMaxScale) /
-      4
-    }%;">${
+          chartMaxScale}%; text-align: center; box-sizing: border-box; padding-top:${(100 -
+      (90 *
+        (item.value === null || item.value === undefined ? 0 : item.value)) /
+        chartMaxScale) /
+      4}%;">${
       item.value === null || item.value === undefined
         ? "-"
         : item.value.toFixed(1)
     }</div>
-      <div style="font-size: 1px; width: 100%; height: ${
-        (90 *
-          (item.value === null || item.value === undefined ? 0 : item.value)) /
-        chartMaxScale
-      }%; background-color: ${barColor}; color: ${barColor}">.</div>
+      <div style="font-size: 1px; width: 100%; height: ${(90 *
+        (item.value === null || item.value === undefined ? 0 : item.value)) /
+        chartMaxScale}%; background-color: ${barColor}; color: ${barColor}">.</div>
       <div style="font-size: 10px;">${getCustomedDate(item.date)}</div>
     </div>
     `;
